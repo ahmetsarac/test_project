@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:test_project/screens/home_screen.dart';
 
 void main() {
-  runApp(const ZirvaApp());
+  runApp(const ProviderScope(child: ZirvaApp()));
 }
 
 class ZirvaApp extends StatelessWidget {
@@ -11,11 +13,7 @@ class ZirvaApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(useMaterial3: true),
-      home: const Scaffold(
-        body: Center(
-          child: Text('Zirva'),
-        ),
-      ),
+      home: const HomeScreen(),
     );
   }
 }
