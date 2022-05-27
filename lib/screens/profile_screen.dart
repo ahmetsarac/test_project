@@ -22,7 +22,7 @@ class ProfileScreen extends ConsumerWidget {
           Expanded(
             child: ListView.builder(
               itemBuilder: (context, index) {
-                return PostWidget(post: likedPosts[index]);
+                return PostWidget(id: likedPosts[index]);
               },
               itemCount: likedPosts.length,
             ),

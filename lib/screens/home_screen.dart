@@ -9,7 +9,7 @@ class HomeScreen extends ConsumerWidget {
   HomeScreen({Key? key}) : super(key: key);
 
   final screens = [
-    FeedScreen(),
+    const FeedScreen(),
     const ProfileScreen(),
   ];
 
