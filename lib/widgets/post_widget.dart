@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:test_project/providers/liked_posts_provider.dart';
 
 import '../models/post.dart';
+import '../screens/post_screen.dart';
 
 class PostWidget extends ConsumerWidget {
   final String id;
@@ -17,6 +18,15 @@ class PostWidget extends ConsumerWidget {
       child: Column(
         children: [
           GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PostScreen(
+                      id: id,
+                    ),
+                  ));
+            },
             onDoubleTap: () {
               ref.read(likedPostsProvider.notifier).addPost(id);
             },
