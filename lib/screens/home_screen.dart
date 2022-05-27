@@ -6,11 +6,11 @@ import 'feed_screen.dart';
 import 'profile_screen.dart';
 
 class HomeScreen extends ConsumerWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
 
-  final screens = const [
+  final screens = [
     FeedScreen(),
-    ProfileScreen(),
+    const ProfileScreen(),
   ];
 
   @override
@@ -34,7 +34,10 @@ class HomeScreen extends ConsumerWidget {
           ),
         ],
       ),
-      body: screens[currentIndex],
+      body: IndexedStack(
+        index: currentIndex,
+        children: screens,
+      ),
     );
   }
 }
