@@ -22,7 +22,7 @@ class FeedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, index) {
-        return PostWidget(id: posts[index].id, imageUrl: posts[index].imageUrl);
+        return PostWidget(post: posts[index]);
       },
       itemCount: posts.length,
     );
